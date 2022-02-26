@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		301CF85D27C53D5300982C6A /* CreateAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CF85C27C53D5300982C6A /* CreateAnnouncementViewController.swift */; };
+		301CF85F27C53E4500982C6A /* AnouncementNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CF85E27C53E4500982C6A /* AnouncementNavigationView.swift */; };
+		301CF86127C55EC200982C6A /* ProductKindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CF86027C55EC200982C6A /* ProductKindView.swift */; };
+		301CF86327C560D900982C6A /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CF86227C560D900982C6A /* UIStackView + Extension.swift */; };
+		305E278C27CA79C9000E0680 /* WYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E278B27CA79C9000E0680 /* WYTextField.swift */; };
+		30D2D6C127B83A64004DAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6C027B83A64004DAD7C /* AppDelegate.swift */; };
+		30D2D6C327B83A64004DAD7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */; };
+		30D2D6CA27B83A65004DAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D2D6C927B83A65004DAD7C /* Assets.xcassets */; };
+		30D2D6CD27B83A65004DAD7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D2D6CB27B83A65004DAD7C /* LaunchScreen.storyboard */; };
+		30D2D6D627B83C85004DAD7C /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6D527B83C85004DAD7C /* MainFeedViewController.swift */; };
+		30D2D6D927B83E3D004DAD7C /* MainFeedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6D827B83E3D004DAD7C /* MainFeedCollectionCell.swift */; };
+		30D2D6DC27B8405A004DAD7C /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6DB27B8405A004DAD7C /* UIFont + Extension.swift */; };
+		30D2D6DE27B843D0004DAD7C /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6DD27B843D0004DAD7C /* UILabel + Extension.swift */; };
+		30D2D6E027B84E8D004DAD7C /* Color + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6DF27B84E8D004DAD7C /* Color + Extension.swift */; };
+		30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E627B85331004DAD7C /* HSpinnerButton.swift */; };
+		30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E827B95ED1004DAD7C /* PhotoCollectionViewCell.swift */; };
+		595F0A4EFE53670E7AF21C46 /* Pods_WylsaMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		301CF85C27C53D5300982C6A /* CreateAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnnouncementViewController.swift; sourceTree = "<group>"; };
+		301CF85E27C53E4500982C6A /* AnouncementNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnouncementNavigationView.swift; sourceTree = "<group>"; };
+		301CF86027C55EC200982C6A /* ProductKindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductKindView.swift; sourceTree = "<group>"; };
+		301CF86227C560D900982C6A /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
+		305E278B27CA79C9000E0680 /* WYTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYTextField.swift; sourceTree = "<group>"; };
+		30D2D6BD27B83A64004DAD7C /* WylsaMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WylsaMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30D2D6C027B83A64004DAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		30D2D6C927B83A65004DAD7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30D2D6CC27B83A65004DAD7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30D2D6CE27B83A65004DAD7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30D2D6D527B83C85004DAD7C /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		30D2D6D827B83E3D004DAD7C /* MainFeedCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedCollectionCell.swift; sourceTree = "<group>"; };
+		30D2D6DB27B8405A004DAD7C /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		30D2D6DD27B843D0004DAD7C /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		30D2D6DF27B84E8D004DAD7C /* Color + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extension.swift"; sourceTree = "<group>"; };
+		30D2D6E627B85331004DAD7C /* HSpinnerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSpinnerButton.swift; sourceTree = "<group>"; };
+		30D2D6E827B95ED1004DAD7C /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		715A11E0F0E50D2346D103A4 /* Pods-WylsaMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.release.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.release.xcconfig"; sourceTree = "<group>"; };
+		881CB724934ABF0C5CB54356 /* Pods-WylsaMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.debug.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
+		A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WylsaMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30D2D6BA27B83A64004DAD7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				595F0A4EFE53670E7AF21C46 /* Pods_WylsaMarketplace.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		301CF85B27C53D3400982C6A /* CreateAnnouncement */ = {
+			isa = PBXGroup;
+			children = (
+				301CF85C27C53D5300982C6A /* CreateAnnouncementViewController.swift */,
+				301CF85E27C53E4500982C6A /* AnouncementNavigationView.swift */,
+				301CF86027C55EC200982C6A /* ProductKindView.swift */,
+			);
+			path = CreateAnnouncement;
+			sourceTree = "<group>";
+		};
+		30D2D6B427B83A64004DAD7C = {
+			isa = PBXGroup;
+			children = (
+				30D2D6BF27B83A64004DAD7C /* WylsaMarketplace */,
+				30D2D6BE27B83A64004DAD7C /* Products */,
+				CCE6ED974D2B0843DD90684C /* Pods */,
+				D2E7AB351617787D29059D44 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		30D2D6BE27B83A64004DAD7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30D2D6BD27B83A64004DAD7C /* WylsaMarketplace.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30D2D6BF27B83A64004DAD7C /* WylsaMarketplace */ = {
+			isa = PBXGroup;
+			children = (
+				30D2D6E527B85324004DAD7C /* Kit */,
+				30D2D6DA27B84042004DAD7C /* Extensions */,
+				30D2D6D427B83C6B004DAD7C /* MainFeed */,
+				301CF85B27C53D3400982C6A /* CreateAnnouncement */,
+				30D2D6C027B83A64004DAD7C /* AppDelegate.swift */,
+				30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */,
+				30D2D6C927B83A65004DAD7C /* Assets.xcassets */,
+				30D2D6CB27B83A65004DAD7C /* LaunchScreen.storyboard */,
+				30D2D6CE27B83A65004DAD7C /* Info.plist */,
+			);
+			path = WylsaMarketplace;
+			sourceTree = "<group>";
+		};
+		30D2D6D427B83C6B004DAD7C /* MainFeed */ = {
+			isa = PBXGroup;
+			children = (
+				30D2D6D727B83E2C004DAD7C /* Views */,
+				30D2D6D527B83C85004DAD7C /* MainFeedViewController.swift */,
+			);
+			path = MainFeed;
+			sourceTree = "<group>";
+		};
+		30D2D6D727B83E2C004DAD7C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30D2D6D827B83E3D004DAD7C /* MainFeedCollectionCell.swift */,
+				30D2D6E827B95ED1004DAD7C /* PhotoCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		30D2D6DA27B84042004DAD7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30D2D6DB27B8405A004DAD7C /* UIFont + Extension.swift */,
+				30D2D6DD27B843D0004DAD7C /* UILabel + Extension.swift */,
+				30D2D6DF27B84E8D004DAD7C /* Color + Extension.swift */,
+				301CF86227C560D900982C6A /* UIStackView + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		30D2D6E527B85324004DAD7C /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				30D2D6E627B85331004DAD7C /* HSpinnerButton.swift */,
+				305E278B27CA79C9000E0680 /* WYTextField.swift */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		CCE6ED974D2B0843DD90684C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				881CB724934ABF0C5CB54356 /* Pods-WylsaMarketplace.debug.xcconfig */,
+				715A11E0F0E50D2346D103A4 /* Pods-WylsaMarketplace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2E7AB351617787D29059D44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30D2D6BC27B83A64004DAD7C /* WylsaMarketplace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30D2D6D127B83A65004DAD7C /* Build configuration list for PBXNativeTarget "WylsaMarketplace" */;
+			buildPhases = (
+				B8E6B7AE78206D6D4CEB895F /* [CP] Check Pods Manifest.lock */,
+				30D2D6B927B83A64004DAD7C /* Sources */,
+				30D2D6BA27B83A64004DAD7C /* Frameworks */,
+				30D2D6BB27B83A64004DAD7C /* Resources */,
+				103295E34548EEE3DE27DB68 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WylsaMarketplace;
+			productName = WylsaMarketplace;
+			productReference = 30D2D6BD27B83A64004DAD7C /* WylsaMarketplace.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30D2D6B527B83A64004DAD7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					30D2D6BC27B83A64004DAD7C = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 30D2D6B827B83A64004DAD7C /* Build configuration list for PBXProject "WylsaMarketplace" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30D2D6B427B83A64004DAD7C;
+			productRefGroup = 30D2D6BE27B83A64004DAD7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30D2D6BC27B83A64004DAD7C /* WylsaMarketplace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30D2D6BB27B83A64004DAD7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30D2D6CD27B83A65004DAD7C /* LaunchScreen.storyboard in Resources */,
+				30D2D6CA27B83A65004DAD7C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		103295E34548EEE3DE27DB68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E6B7AE78206D6D4CEB895F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WylsaMarketplace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30D2D6B927B83A64004DAD7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30D2D6DC27B8405A004DAD7C /* UIFont + Extension.swift in Sources */,
+				30D2D6E027B84E8D004DAD7C /* Color + Extension.swift in Sources */,
+				301CF86327C560D900982C6A /* UIStackView + Extension.swift in Sources */,
+				30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */,
+				30D2D6D927B83E3D004DAD7C /* MainFeedCollectionCell.swift in Sources */,
+				30D2D6C127B83A64004DAD7C /* AppDelegate.swift in Sources */,
+				301CF85F27C53E4500982C6A /* AnouncementNavigationView.swift in Sources */,
+				301CF86127C55EC200982C6A /* ProductKindView.swift in Sources */,
+				301CF85D27C53D5300982C6A /* CreateAnnouncementViewController.swift in Sources */,
+				30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */,
+				30D2D6C327B83A64004DAD7C /* SceneDelegate.swift in Sources */,
+				305E278C27CA79C9000E0680 /* WYTextField.swift in Sources */,
+				30D2D6DE27B843D0004DAD7C /* UILabel + Extension.swift in Sources */,
+				30D2D6D627B83C85004DAD7C /* MainFeedViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		30D2D6CB27B83A65004DAD7C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30D2D6CC27B83A65004DAD7C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30D2D6CF27B83A65004DAD7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30D2D6D027B83A65004DAD7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30D2D6D227B83A65004DAD7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 881CB724934ABF0C5CB54356 /* Pods-WylsaMarketplace.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL28D5C2MP;
+				INFOPLIST_FILE = WylsaMarketplace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Bsw20.WylsaMarketplace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30D2D6D327B83A65004DAD7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 715A11E0F0E50D2346D103A4 /* Pods-WylsaMarketplace.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL28D5C2MP;
+				INFOPLIST_FILE = WylsaMarketplace/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Bsw20.WylsaMarketplace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30D2D6B827B83A64004DAD7C /* Build configuration list for PBXProject "WylsaMarketplace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30D2D6CF27B83A65004DAD7C /* Debug */,
+				30D2D6D027B83A65004DAD7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30D2D6D127B83A65004DAD7C /* Build configuration list for PBXNativeTarget "WylsaMarketplace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30D2D6D227B83A65004DAD7C /* Debug */,
+				30D2D6D327B83A65004DAD7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30D2D6B527B83A64004DAD7C /* Project object */;
+}
