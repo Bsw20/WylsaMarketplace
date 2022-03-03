@@ -134,6 +134,12 @@ class CreateAnnouncementViewController: UIViewController {
     
     private func setup() {
         view.backgroundColor = .bg1
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    private func nextButtonTapped() {
+        present(SetCostViewController(), animated: true, completion: nil)
     }
     
     private func setupHierarchy() {

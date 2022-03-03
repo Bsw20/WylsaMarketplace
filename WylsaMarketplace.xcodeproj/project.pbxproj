@@ -12,6 +12,8 @@
 		301CF86127C55EC200982C6A /* ProductKindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CF86027C55EC200982C6A /* ProductKindView.swift */; };
 		301CF86327C560D900982C6A /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CF86227C560D900982C6A /* UIStackView + Extension.swift */; };
 		305E278C27CA79C9000E0680 /* WYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E278B27CA79C9000E0680 /* WYTextField.swift */; };
+		305E278E27CA89C9000E0680 /* SetCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E278D27CA89C9000E0680 /* SetCostViewController.swift */; };
+		305E279227CA8AF1000E0680 /* LabledTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305E279127CA8AF1000E0680 /* LabledTextFieldView.swift */; };
 		30D2D6C127B83A64004DAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6C027B83A64004DAD7C /* AppDelegate.swift */; };
 		30D2D6C327B83A64004DAD7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */; };
 		30D2D6CA27B83A65004DAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D2D6C927B83A65004DAD7C /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 		301CF86027C55EC200982C6A /* ProductKindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductKindView.swift; sourceTree = "<group>"; };
 		301CF86227C560D900982C6A /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
 		305E278B27CA79C9000E0680 /* WYTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WYTextField.swift; sourceTree = "<group>"; };
+		305E278D27CA89C9000E0680 /* SetCostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCostViewController.swift; sourceTree = "<group>"; };
+		305E279127CA8AF1000E0680 /* LabledTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabledTextFieldView.swift; sourceTree = "<group>"; };
 		30D2D6BD27B83A64004DAD7C /* WylsaMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WylsaMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D2D6C027B83A64004DAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,11 +69,28 @@
 		301CF85B27C53D3400982C6A /* CreateAnnouncement */ = {
 			isa = PBXGroup;
 			children = (
+				305E278F27CA89DD000E0680 /* Controllers */,
+				305E279027CA89E4000E0680 /* Views */,
+			);
+			path = CreateAnnouncement;
+			sourceTree = "<group>";
+		};
+		305E278F27CA89DD000E0680 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				301CF85C27C53D5300982C6A /* CreateAnnouncementViewController.swift */,
+				305E278D27CA89C9000E0680 /* SetCostViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		305E279027CA89E4000E0680 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				301CF85E27C53E4500982C6A /* AnouncementNavigationView.swift */,
 				301CF86027C55EC200982C6A /* ProductKindView.swift */,
 			);
-			path = CreateAnnouncement;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		30D2D6B427B83A64004DAD7C = {
@@ -140,6 +161,7 @@
 			children = (
 				30D2D6E627B85331004DAD7C /* HSpinnerButton.swift */,
 				305E278B27CA79C9000E0680 /* WYTextField.swift */,
+				305E279127CA8AF1000E0680 /* LabledTextFieldView.swift */,
 			);
 			path = Kit;
 			sourceTree = "<group>";
@@ -280,11 +302,13 @@
 				30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */,
 				30D2D6D927B83E3D004DAD7C /* MainFeedCollectionCell.swift in Sources */,
 				30D2D6C127B83A64004DAD7C /* AppDelegate.swift in Sources */,
+				305E278E27CA89C9000E0680 /* SetCostViewController.swift in Sources */,
 				301CF85F27C53E4500982C6A /* AnouncementNavigationView.swift in Sources */,
 				301CF86127C55EC200982C6A /* ProductKindView.swift in Sources */,
 				301CF85D27C53D5300982C6A /* CreateAnnouncementViewController.swift in Sources */,
 				30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */,
 				30D2D6C327B83A64004DAD7C /* SceneDelegate.swift in Sources */,
+				305E279227CA8AF1000E0680 /* LabledTextFieldView.swift in Sources */,
 				305E278C27CA79C9000E0680 /* WYTextField.swift in Sources */,
 				30D2D6DE27B843D0004DAD7C /* UILabel + Extension.swift in Sources */,
 				30D2D6D627B83C85004DAD7C /* MainFeedViewController.swift in Sources */,
