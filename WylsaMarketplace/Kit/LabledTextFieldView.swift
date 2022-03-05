@@ -18,6 +18,7 @@ final class LabledTextFieldView: UIView {
     //MARK: - Variables
     
     //MARK: - Controls
+    
     private var titleLabel: UILabel = {
         let label = UILabel.newAutoLayout()
         label.setStyle(style: .init(font: .ceraPro(style: .normal, size: 13),
@@ -29,7 +30,7 @@ final class LabledTextFieldView: UIView {
         return label
     }()
     
-    private let mainTextField: WYTextField = {
+    public let mainTextField: WYTextField = {
         let view = WYTextField(model: .init(placeholder: "Добавьте название"))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

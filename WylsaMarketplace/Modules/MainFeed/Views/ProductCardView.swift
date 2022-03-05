@@ -1,18 +1,23 @@
 //
-//  MainFeedCollectionCell.swift
+//  ProductCardView.swift
 //  WylsaMarketplace
 //
-//  Created by Ярослав Карпунькин on 12.02.2022.
+//  Created by Ярослав Карпунькин on 05.03.2022.
 //
 
 import Foundation
 import UIKit
 
+protocol ProductCardViewDelegate: NSObjectProtocol {
+    func chatToSellerButtonTapped(view: ProductCardView)
+}
 
-class MainFeedCollectionCell: UICollectionViewCell {
+final class ProductCardView: UIView {
+    
     //MARK: - Variables
-    static var reuseId = "MainFeedCollectionCell"
-    static var preferredHeight: CGFloat = 318
+    weak var customDelegate: ProductCardViewDelegate?
+    
+    //MARK: - Controls
     
     private var containerView: UIView = {
        let view = UIView()
@@ -85,16 +90,16 @@ class MainFeedCollectionCell: UICollectionViewCell {
         return button
     }()
     
-    //MARK: - Object lifecycle
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
         stubInit()
         setup()
         setupHierarchy()
-        setupConstrains()
+        setupConstraints()
+        
     }
     
-    required init?(coder: NSCoder) {
+    required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -104,12 +109,23 @@ class MainFeedCollectionCell: UICollectionViewCell {
         locationLabel.text = "Москва"
     }
     
+//    public func configure(viewModel: <#ViewModel#>) {
+//
+//    }
+    
     private func setup() {
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self
         photosCollectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.reuseId)
+        chatToSellerButton.addTarget(self, action: #selector(chatToSellerButtonTapped), for: .touchUpInside)
     }
     
+    @objc
+    private func chatToSellerButtonTapped() {
+        customDelegate?.chatToSellerButtonTapped(view: self)
+    }
+    
+    //MARK: - Layout
     private func setupHierarchy() {
         addSubview(containerView)
         containerView.addSubview(photosCollectionView)
@@ -124,7 +140,7 @@ class MainFeedCollectionCell: UICollectionViewCell {
         bottomContainerView.addSubview(locationImageView)
     }
     
-    private func setupConstrains() {
+    private func setupConstraints() {
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -168,12 +184,11 @@ class MainFeedCollectionCell: UICollectionViewCell {
             make.left.equalTo(locationImageView.snp.right).offset(6)
         }
         
-        
     }
+    
 }
 
-
-extension MainFeedCollectionCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProductCardView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }

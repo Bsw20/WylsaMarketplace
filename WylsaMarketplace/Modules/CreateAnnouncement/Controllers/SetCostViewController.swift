@@ -21,7 +21,7 @@ class SetCostViewController: UIViewController {
     }()
     
     private var navigationView: AnouncementNavigationView = {
-        let view = AnouncementNavigationView(buttonType: .back)
+        let view = AnouncementNavigationView(buttonType: .back, title: "Создание объявления")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -36,7 +36,7 @@ class SetCostViewController: UIViewController {
     private var nextButton: HSpinnerButton = {
         let button = HSpinnerButton(type: .system)
         button.layer.cornerRadius = 8
-        button.setTitle("Далее", for: .normal)
+        button.setTitle("Опубликовать", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .accentGreen
         button.titleLabel?.font = UIFont.ceraPro(style: .normal, size: 15)
@@ -52,6 +52,16 @@ class SetCostViewController: UIViewController {
     
     private func setup() {
         view.backgroundColor = .bg1
+        setCostView.mainTextField.becomeFirstResponder()
+        setCostView.mainTextField.keyboardType = .numberPad
+        navigationView.customDelegate = self
+        nextButton.addTarget(self, action: #selector(publicButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    private func publicButtonTapped() {
+        print(#function)
+        present(ProductDescriptionViewController(), animated: true, completion: nil)
     }
     
     private func setupHierarchy() {
@@ -69,7 +79,7 @@ class SetCostViewController: UIViewController {
         }
         
         navigationView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(53)
             make.left.right.equalToSuperview()
             
         }
@@ -82,6 +92,7 @@ class SetCostViewController: UIViewController {
         nextButton.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(42)
+            make.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-22)
 //            make.bottom.equalTo(view.)
             
         }
@@ -92,3 +103,8 @@ class SetCostViewController: UIViewController {
     }
 }
 
+extension SetCostViewController: AnouncementNavigationViewDelegate {
+    func backButtonTapped(view: AnouncementNavigationView) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}

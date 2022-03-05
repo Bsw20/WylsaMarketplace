@@ -15,6 +15,7 @@ struct LabelStyle {
     var textAlignment: NSTextAlignment?
     var numberOfLines: Int?
     var text: String?
+    var lineBreakMode: NSLineBreakMode?
     
 }
 
@@ -44,6 +45,11 @@ extension UILabel {
         if let text = style.text {
             self.text = text
         }
+        
+        if let lineBreakMode = style.lineBreakMode {
+            self.lineBreakMode = lineBreakMode
+        }
+        
 
     }
 }

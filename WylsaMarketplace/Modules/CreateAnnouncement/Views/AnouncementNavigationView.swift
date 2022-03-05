@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
+protocol AnouncementNavigationViewDelegate: NSObjectProtocol {
+    func backButtonTapped(view: AnouncementNavigationView)
+}
 
 final class AnouncementNavigationView: UIView {
+    weak var customDelegate: AnouncementNavigationViewDelegate?
+    
     enum BackButtonType {
         case back
         case close
@@ -34,7 +39,7 @@ final class AnouncementNavigationView: UIView {
                                     textColor: .white,
                                     textAlignment: .left,
                                     numberOfLines: 2))
-        label.text = "Создать объявления"
+        label.text = "Создание объявления"
         return label
     }()
     
@@ -45,9 +50,9 @@ final class AnouncementNavigationView: UIView {
         return button
     }()
     
-    init(buttonType: BackButtonType) {
+    init(buttonType: BackButtonType, title: String) {
         super.init(frame: .zero)
-        setup(buttonType: buttonType)
+        setup(buttonType: buttonType, title: title)
         setupHierarchy()
         setupConstraints()
         
@@ -58,9 +63,16 @@ final class AnouncementNavigationView: UIView {
     }
     
     
-    private func setup(buttonType: BackButtonType) {
+    private func setup(buttonType: BackButtonType, title: String) {
+        titleLabel.text = title
         backButton.setImage(buttonType.getImage(), for: .normal)
         backgroundColor = .bg1
+        backButton.addTarget(self, action: #selector(backButtonTapped) , for: .touchUpInside)
+    }
+    
+    @objc
+    private func backButtonTapped() {
+        customDelegate?.backButtonTapped(view: self)
     }
     
     //MARK: - Layout
@@ -73,6 +85,8 @@ final class AnouncementNavigationView: UIView {
         backButton.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
+            make.height.equalTo(34)
+            make.width.equalTo(34)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -80,6 +94,7 @@ final class AnouncementNavigationView: UIView {
             make.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(24)
         }
+        
         
         titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: Float(1000)), for: .vertical)
     }

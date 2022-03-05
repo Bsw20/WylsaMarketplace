@@ -12,13 +12,18 @@ struct ProductKindViewModel {
     let productKind: String
 }
 
+protocol ProductKindViewDelegate: NSObjectProtocol {
+    func viewTapped(view: ProductKindView)
+}
+
 final class ProductKindView: UIView {
     
-    //MARK: - Variables
     
+    //MARK: - Variables
+    weak var customDelegate: ProductKindViewDelegate?
     //MARK: - Controls
-    private let containerView: UIView = {
-        let view = UIView()
+    private let containerView: UIButton = {
+        let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .grey1
         view.layer.cornerRadius = 8
@@ -61,6 +66,12 @@ final class ProductKindView: UIView {
     
     private func setup() {
         backgroundColor = .bg1
+        containerView.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    private func buttonTapped() {
+        customDelegate?.viewTapped(view: self)
     }
     
     //MARK: - Layout

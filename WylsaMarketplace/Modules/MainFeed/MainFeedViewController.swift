@@ -24,11 +24,13 @@ class MainFeedViewController: UIViewController {
         let myOrders = UIAction(title: "Мои заказы", image: UIImage(named: "Group 696")) {[weak self] _ in
             guard let self = self else { return }
             print("Мои заказы")
+//            self.navigationController?.present(ProductDescriptionViewController(), animated: true, completion: nil)
         }
         
         let message = UIAction(title: "Сообщения", image: UIImage(named: "Group 695")) {[weak self] _ in
             guard let self = self else { return }
             print("Сообщения")
+            self.navigationController?.present(ConversationsViewController(), animated: true, completion: nil)
         }
             
         button.menu = UIMenu(title: "", children: [
@@ -91,6 +93,7 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainFeedCollectionCell.reuseId, for: indexPath) as? MainFeedCollectionCell else { return UICollectionViewCell()}
+        cell.customDelegate = self
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -99,5 +102,11 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: MainFeedCollectionCell.preferredHeight)
+    }
+}
+
+extension MainFeedViewController: MainFeedCollectionCellDelegate {
+    func chatToSellerButtonTapped(cell: MainFeedCollectionCell) {
+        present(OpenedProductCardViewController(), animated: true, completion: nil)
     }
 }
