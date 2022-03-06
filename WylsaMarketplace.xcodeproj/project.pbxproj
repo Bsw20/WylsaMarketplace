@@ -32,6 +32,10 @@
 		30A08B8627D3A39D0086C484 /* ProductDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B8527D3A39D0086C484 /* ProductDescriptionViewController.swift */; };
 		30A08B8927D3C1FF0086C484 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B8827D3C1FF0086C484 /* ConversationsViewController.swift */; };
 		30A08B8C27D3C2110086C484 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B8B27D3C2110086C484 /* ConversationCell.swift */; };
+		30A08B8E27D4AC140086C484 /* PersonalChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B8D27D4AC140086C484 /* PersonalChatViewController.swift */; };
+		30A08B9027D4ADAD0086C484 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B8F27D4ADAD0086C484 /* MessageModel.swift */; };
+		30A08B9327D4B48E0086C484 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B9227D4B48E0086C484 /* Date + Extension.swift */; };
+		30A08B9527D4BF520086C484 /* PersonalChatTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A08B9427D4BF520086C484 /* PersonalChatTitleView.swift */; };
 		30D2D6C127B83A64004DAD7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6C027B83A64004DAD7C /* AppDelegate.swift */; };
 		30D2D6C327B83A64004DAD7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */; };
 		30D2D6CA27B83A65004DAD7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D2D6C927B83A65004DAD7C /* Assets.xcassets */; };
@@ -72,6 +76,10 @@
 		30A08B8527D3A39D0086C484 /* ProductDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDescriptionViewController.swift; sourceTree = "<group>"; };
 		30A08B8827D3C1FF0086C484 /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		30A08B8B27D3C2110086C484 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		30A08B8D27D4AC140086C484 /* PersonalChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalChatViewController.swift; sourceTree = "<group>"; };
+		30A08B8F27D4ADAD0086C484 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		30A08B9227D4B48E0086C484 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		30A08B9427D4BF520086C484 /* PersonalChatTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalChatTitleView.swift; sourceTree = "<group>"; };
 		30D2D6BD27B83A64004DAD7C /* WylsaMarketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WylsaMarketplace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30D2D6C027B83A64004DAD7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30D2D6C227B83A64004DAD7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,8 +194,10 @@
 		30A08B8727D3C18C0086C484 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				30A08B9127D4ADB10086C484 /* models */,
 				30A08B8A27D3C2060086C484 /* views */,
 				30A08B8827D3C1FF0086C484 /* ConversationsViewController.swift */,
+				30A08B8D27D4AC140086C484 /* PersonalChatViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -196,8 +206,17 @@
 			isa = PBXGroup;
 			children = (
 				30A08B8B27D3C2110086C484 /* ConversationCell.swift */,
+				30A08B9427D4BF520086C484 /* PersonalChatTitleView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		30A08B9127D4ADB10086C484 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				30A08B8F27D4ADAD0086C484 /* MessageModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		30D2D6B427B83A64004DAD7C = {
@@ -260,6 +279,7 @@
 				30D2D6DD27B843D0004DAD7C /* UILabel + Extension.swift */,
 				30D2D6DF27B84E8D004DAD7C /* Color + Extension.swift */,
 				301CF86227C560D900982C6A /* UIStackView + Extension.swift */,
+				30A08B9227D4B48E0086C484 /* Date + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -412,8 +432,12 @@
 				30A08B8027D285580086C484 /* SharedNavigationView.swift in Sources */,
 				30D2D6E027B84E8D004DAD7C /* Color + Extension.swift in Sources */,
 				304FF36827D0E81700A2A409 /* KeyboardLayoutConstraint.swift in Sources */,
+				30A08B9327D4B48E0086C484 /* Date + Extension.swift in Sources */,
+				30A08B9527D4BF520086C484 /* PersonalChatTitleView.swift in Sources */,
 				301CF86327C560D900982C6A /* UIStackView + Extension.swift in Sources */,
+				30A08B9027D4ADAD0086C484 /* MessageModel.swift in Sources */,
 				30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */,
+				30A08B8E27D4AC140086C484 /* PersonalChatViewController.swift in Sources */,
 				30D2D6D927B83E3D004DAD7C /* MainFeedCollectionCell.swift in Sources */,
 				30A08B8927D3C1FF0086C484 /* ConversationsViewController.swift in Sources */,
 				304FF36F27D1047400A2A409 /* PhotosCollectionHeader.swift in Sources */,

@@ -7,4 +7,5 @@ target 'WylsaMarketplace' do
 
   # Pods for WylsaMarketplace
   pod 'SnapKit'
+  pod 'MessageKit'
 end

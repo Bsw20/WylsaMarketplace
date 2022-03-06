@@ -30,7 +30,10 @@ class MainFeedViewController: UIViewController {
         let message = UIAction(title: "Сообщения", image: UIImage(named: "Group 695")) {[weak self] _ in
             guard let self = self else { return }
             print("Сообщения")
-            self.navigationController?.present(ConversationsViewController(), animated: true, completion: nil)
+//            self.navigationController?.present(ConversationsViewController(), animated: true, completion: nil)
+            
+//            self.navigationController?.push(PersonalChatViewController(), animated: true, completion: nil)
+            self.navigationController?.pushViewController(PersonalChatViewController(), animated: true)
         }
             
         button.menu = UIMenu(title: "", children: [
