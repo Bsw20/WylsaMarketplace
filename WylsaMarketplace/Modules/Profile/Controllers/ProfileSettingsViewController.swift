@@ -21,57 +21,65 @@ class ProfileSettingsViewController: UIViewController {
     public var labels = ["1 км", "2 км", "5 км", "10 км"]
     public var isActive = [false, true, false, false]
     
+    private var stackView = UIStackView()
+    private var stackView2 = UIStackView()
     
     public var theme = Theme.dark
     
-    private let collectionView = UICollectionView()
+    private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundColor = UIColor.cyan
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ButtonCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.scrollDirection = .horizontal
+        }
+        
 
         self.view.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
         
         let (stackView, entity1) = createEntityStackView(text: "Регион для поиска", field: city)
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(stackView)
+        self.stackView = stackView
+        self.view.addSubview(self.stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
-            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
+            self.stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
+            self.stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            self.stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
         ])
         
+        self.view.addSubview(collectionView)
         
         
-        let stackView2 = UIStackView()
-        stackView2.axis = .horizontal
-        stackView2.spacing = 8
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 16),
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+            collectionView.heightAnchor.constraint(equalToConstant: 24)
+        ])
         
+        let (stackView2, entity2) = createEntityStackView(text: "Тема оформления", field: city)
         
+        /*
         stackView2.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(stackView2)
+        self.stackView2 = stackView2
+        self.view.addSubview(self.stackView2)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
-            stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
+            self.stackView2.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
+            self.stackView2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            self.stackView2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+            self.stackView2.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
-        let (stackView3, entity2) = createEntityStackView(text: "Тема оформления", field: city)
-        
-        stackView3.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(stackView3)
-        
-        NSLayoutConstraint.activate([
-            stackView3.topAnchor.constraint(equalTo: view.topAnchor, constant: 160),
-            stackView3.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            stackView3.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
-        ])
+        */
         
         
         self.cityField = entity1
@@ -117,7 +125,7 @@ class ProfileSettingsViewController: UIViewController {
         stackView.alignment = .leading
         stackView.spacing = 8
         
-        let label = createTextLabel(text: "Регион для поиска")
+        let label = createTextLabel(text: text)
         
         
         let kindView = ProductKindView()
@@ -126,7 +134,11 @@ class ProfileSettingsViewController: UIViewController {
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(kindView)
         
-     
+        NSLayoutConstraint.activate([
+            kindView.rightAnchor.constraint(equalTo: stackView.rightAnchor),
+            kindView.leftAnchor.constraint(equalTo: stackView.leftAnchor)
+        ])
+        
         return (stackView, kindView)
     }
     
