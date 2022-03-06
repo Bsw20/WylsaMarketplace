@@ -23,13 +23,14 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.overrideUserInterfaceStyle = .dark
+//        view.overrideUserInterfaceStyle = .dark
+        
         navigationView.customDelegate = self
         setupView()
     }
     
     func setupView() {
-        self.view.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
+        view.backgroundColor = .bg1
         
         self.view.addSubview(navigationView)
         navigationView.snp.makeConstraints { make in

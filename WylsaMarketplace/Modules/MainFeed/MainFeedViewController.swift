@@ -184,12 +184,14 @@ class MainFeedViewController: UIViewController {
     }
     
     @objc func showProfileView() {
-        self.navigationController?.pushViewController(ProfileViewController(), animated: true)
+        let controller = ProfileViewController()
+        controller.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     private func setup() {
         view.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.0431372549, blue: 0.0431372549, alpha: 1)
-
+        hideKeyboardWhenTappedAround()
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         mainCollectionView.register(MainFeedCollectionCell.self, forCellWithReuseIdentifier: MainFeedCollectionCell.reuseId)

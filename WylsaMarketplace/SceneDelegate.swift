@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let shopVC = UINavigationController(rootViewController: MainFeedViewController())
         shopVC.navigationBar.barTintColor = .grey1
+        shopVC.isNavigationBarHidden = true
         shopVC.tabBarItem.image = UIImage(named: "so-add-to-cart")?.withRenderingMode(.alwaysTemplate).withTintColor(.accentGreen)
         shopVC.tabBarItem.image = UIImage(named: "so-add-to-cart")?.withRenderingMode(.alwaysTemplate).withTintColor(.grey1)
 //        navigationVC.navigationBar.isTranslucent = false

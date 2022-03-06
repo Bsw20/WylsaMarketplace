@@ -19,7 +19,15 @@ class ProfileViewController: UIViewController {
     private var myAdvertsButton: UIButton!
     private var deleteProfileButton: UIButton!
     private var deleteLabel: UILabel!
-    private var exitButton: UIButton!
+    private var exitButton: UIButton = {
+            let button = HSpinnerButton(type: .system)
+            button.layer.cornerRadius = 8
+            button.setTitle("Выйти", for: .normal)
+            button.setTitleColor(.white, for: .normal)
+            button.backgroundColor = .accentGreen
+            button.titleLabel?.font = UIFont.ceraPro(style: .normal, size: 15)
+            return button
+    }()
     
     private let imagePicker = UIImagePickerController()
     
@@ -44,7 +52,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setupView() {
-        self.view.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
+        self.view.backgroundColor = .bg1
         
         navigationView.backgroundColor = view.backgroundColor
         
@@ -243,25 +251,18 @@ class ProfileViewController: UIViewController {
     }
     
     func configButton(text: String, colorStyle: UIColor = UIColor(red: 0.514, green: 0.514, blue: 0.514, alpha: 1)) -> UIButton {
-//        if #available(iOS 15.0, *) {
-//            var configuration = UIButton.Configuration.bordered()
-//            configuration.baseForegroundColor = colorStyle
-//            configuration.contentInsets.leading = 8
-//            var container = AttributeContainer()
-//            container.font = UIFont.ceraPro(style: .normal, size: 15)
-//            configuration.attributedTitle = AttributedString(text, attributes: container)
-//            //configuration.title = text
-//            let button = UIButton(configuration: configuration)
-//
-//            button.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.118, alpha: 1)
-//            button.layer.cornerRadius = 8
-//            button.contentHorizontalAlignment = .leading
-//            return button
-//        } else {
-            return UIButton()
-//            // Fallback on earlier versions
-//        }
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.backgroundColor = colorStyle
+        button.titleLabel?.font = UIFont.ceraPro(style: .normal, size: 15)
+        button.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.118, alpha: 1)
+        button.layer.cornerRadius = 8
+        button.contentHorizontalAlignment = .leading
+        button.contentEdgeInsets.left = 8
+        button.setTitleColor(colorStyle, for: .normal)
+        button.setTitle(text, for: .normal)
         
+        return button
     }
 
 

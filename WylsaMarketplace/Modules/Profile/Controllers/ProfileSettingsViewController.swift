@@ -50,7 +50,7 @@ class ProfileSettingsViewController: UIViewController {
         
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: (self.view.frame.width), height: 36), collectionViewLayout: UICollectionViewFlowLayout.init())
         
-        collectionView.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
+        collectionView.backgroundColor = .bg1
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -64,7 +64,7 @@ class ProfileSettingsViewController: UIViewController {
         }
         
 
-        self.view.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
+        self.view.backgroundColor = .bg1
         
         let (stackView, entity1) = createEntityStackView(text: "Регион для поиска", field: city)
         
