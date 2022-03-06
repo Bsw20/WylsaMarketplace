@@ -48,6 +48,15 @@
 		30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E627B85331004DAD7C /* HSpinnerButton.swift */; };
 		30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E827B95ED1004DAD7C /* PhotoCollectionViewCell.swift */; };
 		595F0A4EFE53670E7AF21C46 /* Pods_WylsaMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */; };
+		AF42A9C727D5249E00D40FC9 /* TagsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42A9C627D5249E00D40FC9 /* TagsCollectionViewController.swift */; };
+		AFA0D81B27D4DC58007E6B59 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */; };
+		AFA0D81D27D4F47B007E6B59 /* DoneNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */; };
+		AFA0D81F27D4F7B5007E6B59 /* CityChangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */; };
+		AFA0D82127D4F864007E6B59 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D82027D4F864007E6B59 /* City.swift */; };
+		AFBDA59127D44584001A0048 /* ProfileViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59027D44584001A0048 /* ProfileViewCotroller.swift */; };
+		AFBDA59427D445CB001A0048 /* EditProfileViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59327D445CB001A0048 /* EditProfileViewCotroller.swift */; };
+		AFBDA59627D44DA8001A0048 /* ProfileNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */; };
+		AFBDA59827D4546A001A0048 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59727D4546A001A0048 /* ProfileSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +105,15 @@
 		715A11E0F0E50D2346D103A4 /* Pods-WylsaMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.release.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.release.xcconfig"; sourceTree = "<group>"; };
 		881CB724934ABF0C5CB54356 /* Pods-WylsaMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.debug.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WylsaMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF42A9C627D5249E00D40FC9 /* TagsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewController.swift; sourceTree = "<group>"; };
+		AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneNavigationView.swift; sourceTree = "<group>"; };
+		AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChangingViewController.swift; sourceTree = "<group>"; };
+		AFA0D82027D4F864007E6B59 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		AFBDA59027D44584001A0048 /* ProfileViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCotroller.swift; sourceTree = "<group>"; };
+		AFBDA59327D445CB001A0048 /* EditProfileViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewCotroller.swift; sourceTree = "<group>"; };
+		AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationView.swift; sourceTree = "<group>"; };
+		AFBDA59727D4546A001A0048 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				304FF37927D201E100A2A409 /* ProductKind.swift */,
+				AFA0D82027D4F864007E6B59 /* City.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -172,6 +191,7 @@
 		30A08B7927D270480086C484 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AFBDA58F27D4454C001A0048 /* Profile */,
 				30A08B8727D3C18C0086C484 /* Chat */,
 				30D2D6D427B83C6B004DAD7C /* MainFeed */,
 				301CF85B27C53D3400982C6A /* CreateAnnouncement */,
@@ -258,6 +278,7 @@
 			children = (
 				30D2D6D727B83E2C004DAD7C /* Views */,
 				30D2D6D527B83C85004DAD7C /* MainFeedViewController.swift */,
+				AF42A9C627D5249E00D40FC9 /* TagsCollectionViewController.swift */,
 			);
 			path = MainFeed;
 			sourceTree = "<group>";
@@ -294,6 +315,36 @@
 				304FF36B27D0F06F00A2A409 /* ViewController + Extension.swift */,
 			);
 			path = Kit;
+			sourceTree = "<group>";
+		};
+		AFA0D81927D4DBED007E6B59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */,
+				AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */,
+				AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AFBDA58F27D4454C001A0048 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				AFA0D81927D4DBED007E6B59 /* Views */,
+				AFBDA59227D445B5001A0048 /* Controllers */,
+				AFBDA59027D44584001A0048 /* ProfileViewCotroller.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		AFBDA59227D445B5001A0048 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDA59327D445CB001A0048 /* EditProfileViewCotroller.swift */,
+				AFBDA59727D4546A001A0048 /* ProfileSettingsViewController.swift */,
+				AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CCE6ED974D2B0843DD90684C /* Pods */ = {
@@ -436,6 +487,7 @@
 				30A08B9527D4BF520086C484 /* PersonalChatTitleView.swift in Sources */,
 				301CF86327C560D900982C6A /* UIStackView + Extension.swift in Sources */,
 				30A08B9027D4ADAD0086C484 /* MessageModel.swift in Sources */,
+				AFBDA59127D44584001A0048 /* ProfileViewCotroller.swift in Sources */,
 				30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */,
 				30A08B8E27D4AC140086C484 /* PersonalChatViewController.swift in Sources */,
 				30D2D6D927B83E3D004DAD7C /* MainFeedCollectionCell.swift in Sources */,
@@ -446,21 +498,29 @@
 				30D2D6C127B83A64004DAD7C /* AppDelegate.swift in Sources */,
 				304FF37527D10CCE00A2A409 /* ProductPhotoCollectionCell.swift in Sources */,
 				30A08B8227D38A170086C484 /* ProductRecomendationView.swift in Sources */,
+				AFBDA59827D4546A001A0048 /* ProfileSettingsViewController.swift in Sources */,
+				AFBDA59427D445CB001A0048 /* EditProfileViewCotroller.swift in Sources */,
 				305E278E27CA89C9000E0680 /* SetCostViewController.swift in Sources */,
+				AFA0D82127D4F864007E6B59 /* City.swift in Sources */,
+				AFA0D81D27D4F47B007E6B59 /* DoneNavigationView.swift in Sources */,
 				304FF36C27D0F06F00A2A409 /* ViewController + Extension.swift in Sources */,
+				AFA0D81F27D4F7B5007E6B59 /* CityChangingViewController.swift in Sources */,
 				301CF85F27C53E4500982C6A /* AnouncementNavigationView.swift in Sources */,
 				301CF86127C55EC200982C6A /* ProductKindView.swift in Sources */,
 				301CF85D27C53D5300982C6A /* CreateAnnouncementViewController.swift in Sources */,
 				30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */,
+				AFA0D81B27D4DC58007E6B59 /* ButtonCollectionViewCell.swift in Sources */,
 				30A08B8C27D3C2110086C484 /* ConversationCell.swift in Sources */,
 				30A08B8627D3A39D0086C484 /* ProductDescriptionViewController.swift in Sources */,
 				30D2D6C327B83A64004DAD7C /* SceneDelegate.swift in Sources */,
 				305E279227CA8AF1000E0680 /* LabledTextFieldView.swift in Sources */,
 				30A08B7B27D271CA0086C484 /* UserOnlineDescriptionView.swift in Sources */,
+				AFBDA59627D44DA8001A0048 /* ProfileNavigationView.swift in Sources */,
 				30A08B7E27D279260086C484 /* OpenedProductCardViewController.swift in Sources */,
 				304FF37A27D201E100A2A409 /* ProductKind.swift in Sources */,
 				305E278C27CA79C9000E0680 /* WYTextField.swift in Sources */,
 				304FF37C27D2038F00A2A409 /* SelectProductKindCell.swift in Sources */,
+				AF42A9C727D5249E00D40FC9 /* TagsCollectionViewController.swift in Sources */,
 				30D2D6DE27B843D0004DAD7C /* UILabel + Extension.swift in Sources */,
 				304FF37727D1513B00A2A409 /* SelectProductKindViewController.swift in Sources */,
 				30D2D6D627B83C85004DAD7C /* MainFeedViewController.swift in Sources */,
