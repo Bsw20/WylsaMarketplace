@@ -39,7 +39,18 @@ class ConversationsViewController: UIViewController {
         setupConstrains()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setup() {
+        
         view.backgroundColor = .bg1
         searchBar.searchBarStyle = UISearchBar.Style.prominent
         searchBar.placeholder = " Search..."
@@ -97,6 +108,10 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
         return 92
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(PersonalChatViewController(), animated: true)
+    }
+    
 //    spacing
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -119,7 +134,7 @@ extension ConversationsViewController: UISearchBarDelegate {
 
 extension ConversationsViewController: AnouncementNavigationViewDelegate {
     func backButtonTapped(view: AnouncementNavigationView) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     
