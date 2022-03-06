@@ -16,6 +16,7 @@ class MainFeedViewController: UIViewController {
     var searchField = UITextField()
     var scrollView = UIScrollView()
     var stackView = UIStackView()
+    var collectionViewController = TagsCollectionViewController()
     
     private lazy var plusButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -138,7 +139,7 @@ class MainFeedViewController: UIViewController {
         stackView.spacing = 0
         self.stackView = stackView
         
-        
+        /*
         let scrollView = UIScrollView()
         scrollView.contentSize = CGSize(width: sum, height: 30)
         
@@ -147,12 +148,13 @@ class MainFeedViewController: UIViewController {
         containerView.addSubview(self.scrollView)
         
         self.scrollView.addSubview(self.stackView)
+        */
         
         
         containerView.addSubview(self.titleLabel)
         containerView.addSubview(self.profileButton)
         containerView.addSubview(self.searchField)
-        
+        containerView.addSubview(collectionViewController.collectionView)
         
         
         
@@ -202,32 +204,33 @@ class MainFeedViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            profileButton.topAnchor.constraint(equalTo: header.topAnchor),
             profileButton.rightAnchor.constraint(equalTo: header.rightAnchor, constant: -30),
             profileButton.heightAnchor.constraint(equalToConstant: 40),
             profileButton.widthAnchor.constraint(equalToConstant: 40)
         ])
         
         NSLayoutConstraint.activate([
-            searchField.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 16),
+            searchField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             searchField.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 10),
             searchField.rightAnchor.constraint(equalTo: header.rightAnchor, constant: -10),
             searchField.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         NSLayoutConstraint.activate([
-            scrollView.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 0),
-            scrollView.rightAnchor.constraint(equalTo: header.rightAnchor, constant: 0),
-            scrollView.bottomAnchor.constraint(equalTo: header.bottomAnchor),
-            scrollView.heightAnchor.constraint(equalToConstant: 24)
+            collectionViewController.collectionView.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 24),
+            collectionViewController.collectionView.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 0),
+            collectionViewController.collectionView.rightAnchor.constraint(equalTo: header.rightAnchor, constant: 0),
+            collectionViewController.collectionView.bottomAnchor.constraint(equalTo: header.bottomAnchor),
+            collectionViewController.collectionView.heightAnchor.constraint(equalToConstant: 36)
         ])
         
         
         
         NSLayoutConstraint.activate([
-            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             header.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             header.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            header.heightAnchor.constraint(equalToConstant: 150)
         ])
         
         NSLayoutConstraint.activate([

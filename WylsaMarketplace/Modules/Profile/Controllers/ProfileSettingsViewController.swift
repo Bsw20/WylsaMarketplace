@@ -219,8 +219,6 @@ extension ProfileSettingsViewController: DoneNavigationViewDelegate {
     func doneButtonTapped(view: DoneNavigationView) {
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
 extension ProfileSettingsViewController: ProductKindViewDelegate {
@@ -229,14 +227,11 @@ extension ProfileSettingsViewController: ProductKindViewDelegate {
         controller.customDelegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
-    
-    
 }
 
 extension ProfileSettingsViewController: CityChangingViewControllerDelegate {
     func citySelected(controller: CityChangingViewController, kind: City) {
         cityField.configure(viewModel: .init(productKind: kind.rawValue))
     }
-    
     
 }
