@@ -18,10 +18,20 @@ class ProfileSettingsViewController: UIViewController {
         case light = "Светлая"
     }
     
+    public var labels = ["1 км", "2 км", "5 км", "10 км"]
+    public var isActive = [false, true, false, false]
+    
+    
     public var theme = Theme.dark
+    
+    private let collectionView = UICollectionView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(ButtonCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
 
         self.view.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
         
@@ -35,6 +45,8 @@ class ProfileSettingsViewController: UIViewController {
             stackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             stackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
         ])
+        
+        
         
         let stackView2 = UIStackView()
         stackView2.axis = .horizontal
@@ -142,3 +154,21 @@ class ProfileSettingsViewController: UIViewController {
 
 }
 
+
+extension ProfileSettingsViewController: UICollectionViewDelegate {
+    
+}
+
+extension ProfileSettingsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        labels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ButtonCollectionViewCell
+        cell.config(text: labels[indexPath.row], isActive: isActive[indexPath.row])
+        return cell
+    }
+    
+    
+}

@@ -97,6 +97,4 @@ extension EditProfileViewController: AnouncementNavigationViewDelegate {
     func backButtonTapped(view: AnouncementNavigationView) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }

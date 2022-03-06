@@ -91,7 +91,7 @@ final class ProfileNavigationView: UIView {
     
     @objc
     private func settingsButtonTapped() {
-        customDelegate?.backButtonTapped(view: self)
+        customDelegate?.settingsButtonTapped(view: self)
     }
     
     //MARK: - Layout
