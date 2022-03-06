@@ -95,7 +95,8 @@ class ProductDescriptionViewController: UIViewController {
 
 extension ProductDescriptionViewController: SharedNavigationViewDelegate {
     func backButtonTapped(view: SharedNavigationView) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     func sharedButtonTapped(view: SharedNavigationView) {

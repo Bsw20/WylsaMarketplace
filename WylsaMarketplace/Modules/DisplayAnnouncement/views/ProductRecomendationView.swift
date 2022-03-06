@@ -9,10 +9,14 @@ import Foundation
 import UIKit
 
 
+protocol ProductRecomendationViewDelegate: NSObjectProtocol {
+    func chatToSellerButtonTapped(view: ProductRecomendationView)
+}
 
 final class ProductRecomendationView: UIView {
     
     //MARK: - Variables
+    weak var customDelegate: ProductRecomendationViewDelegate?
     
     //MARK: - Controls
     private var mainContainer: UIView = {
@@ -57,7 +61,7 @@ final class ProductRecomendationView: UIView {
 //    }
     
     private func setup() {
-
+        productCardView.customDelegate = self
     }
     
     //MARK: - Layout
@@ -83,5 +87,13 @@ final class ProductRecomendationView: UIView {
         }
         
     }
+    
+}
+
+extension ProductRecomendationView: ProductCardViewDelegate {
+    func chatToSellerButtonTapped(view: ProductCardView) {
+        customDelegate?.chatToSellerButtonTapped(view: self)
+    }
+    
     
 }

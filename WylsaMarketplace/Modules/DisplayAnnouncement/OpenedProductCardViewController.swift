@@ -76,8 +76,25 @@ class OpenedProductCardViewController: UIViewController {
         setupConstrains()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setup() {
         navigationView.customDelegate = self
+        productRecomendationView.customDelegate = self
+        writeToSellerButton.addTarget(self, action: #selector(writeToSellerButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    private func writeToSellerButtonTapped() {
+        navigationController?.pushViewController(PersonalChatViewController(), animated: true)
     }
     
     private func setupHierarchy() {
@@ -133,7 +150,8 @@ class OpenedProductCardViewController: UIViewController {
 
 extension OpenedProductCardViewController: SharedNavigationViewDelegate {
     func backButtonTapped(view: SharedNavigationView) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     func sharedButtonTapped(view: SharedNavigationView) {
@@ -141,4 +159,10 @@ extension OpenedProductCardViewController: SharedNavigationViewDelegate {
     }
     
     
+}
+
+extension OpenedProductCardViewController: ProductRecomendationViewDelegate {
+    func chatToSellerButtonTapped(view: ProductRecomendationView) {
+        navigationController?.pushViewController(PersonalChatViewController(), animated: true)
+    }
 }

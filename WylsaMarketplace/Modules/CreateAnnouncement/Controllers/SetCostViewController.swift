@@ -43,6 +43,16 @@ class SetCostViewController: UIViewController {
         return button
     }()
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.isNavigationBarHidden = true
+//    }
+//    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.isNavigationBarHidden = false
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -61,7 +71,7 @@ class SetCostViewController: UIViewController {
     @objc
     private func publicButtonTapped() {
         print(#function)
-        present(ProductDescriptionViewController(), animated: true, completion: nil)
+        navigationController?.pushViewController(ProductDescriptionViewController(), animated: true)
     }
     
     private func setupHierarchy() {
@@ -105,6 +115,7 @@ class SetCostViewController: UIViewController {
 
 extension SetCostViewController: AnouncementNavigationViewDelegate {
     func backButtonTapped(view: AnouncementNavigationView) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }

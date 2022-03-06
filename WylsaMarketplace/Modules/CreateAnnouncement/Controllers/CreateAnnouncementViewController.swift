@@ -47,6 +47,21 @@ class CreateAnnouncementViewController: UIViewController {
         setupConstrains()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        navigationController?.isNavigationBarHidden = true
+//    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        navigationController?.isNavigationBarHidden = false
+//    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//    }
+    
+    
     private func setup() {
         view.backgroundColor = .bg1
         setupCollection()
@@ -145,7 +160,9 @@ extension CreateAnnouncementViewController: UICollectionViewDelegate, UICollecti
 
 extension CreateAnnouncementViewController: PhotosCollectionFooterDelegate {
     func nextButtonTapped(view: PhotosCollectionFooter) {
-        present(SetCostViewController(), animated: true, completion: nil)
+        let vc = SetCostViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

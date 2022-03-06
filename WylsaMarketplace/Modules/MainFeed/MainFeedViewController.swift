@@ -18,7 +18,9 @@ class MainFeedViewController: UIViewController {
         let addAnnouncement = UIAction(title: "Добавить объявление", image: UIImage(named: "so-add-circle")) {[weak self] _ in
             guard let self = self else { return }
             print("Добавить объявление")
-            self.navigationController?.present(CreateAnnouncementViewController(), animated: true, completion: nil)
+            let vc = UINavigationController(rootViewController: CreateAnnouncementViewController())
+            vc.isNavigationBarHidden = true
+            self.navigationController?.present(vc, animated: true, completion: nil)
         }
         
         let myOrders = UIAction(title: "Мои заказы", image: UIImage(named: "Group 696")) {[weak self] _ in
@@ -109,6 +111,9 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
 
 extension MainFeedViewController: MainFeedCollectionCellDelegate {
     func chatToSellerButtonTapped(cell: MainFeedCollectionCell) {
-        present(OpenedProductCardViewController(), animated: true, completion: nil)
+//        present(OpenedProductCardViewController(), animated: true, completion: nil)
+        let controller = OpenedProductCardViewController()
+        controller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
