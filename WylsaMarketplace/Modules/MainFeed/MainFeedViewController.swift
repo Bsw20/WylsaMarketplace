@@ -10,10 +10,17 @@ import UIKit
 
 class MainFeedViewController: UIViewController {
     
+    var header = UIView()
+    var titleLabel = UILabel()
+    var profileButton = UIButton()
+    var searchField = UITextField()
+    
     private lazy var plusButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "so-add-circle"), for: .normal)
+        
+        
         
         let addAnnouncement = UIAction(title: "Добавить объявление", image: UIImage(named: "so-add-circle")) {[weak self] _ in
             guard let self = self else { return }
@@ -24,7 +31,7 @@ class MainFeedViewController: UIViewController {
         let myOrders = UIAction(title: "Мои заказы", image: UIImage(named: "Group 696")) {[weak self] _ in
             guard let self = self else { return }
             print("Мои заказы")
-//            self.navigationController?.present(ProductDescriptionViewController(), animated: true, completion: nil)
+            //            self.navigationController?.present(ProductDescriptionViewController(), animated: true, completion: nil)
         }
         
         let message = UIAction(title: "Сообщения", image: UIImage(named: "Group 695")) {[weak self] _ in
@@ -32,9 +39,9 @@ class MainFeedViewController: UIViewController {
             print("Сообщения")
             self.navigationController?.present(ConversationsViewController(), animated: true, completion: nil)
         }
-            
+        
         button.menu = UIMenu(title: "", children: [
-                                message, myOrders, addAnnouncement])
+            message, myOrders, addAnnouncement])
         button.showsMenuAsPrimaryAction = true
         
         return button
@@ -55,10 +62,91 @@ class MainFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .black
+        
+        setupHeader()
         setup()
         setupHierarchy()
         setupConstrains()
+    }
+    
+    private func setupHeader() {
+        
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let title: UILabel = {
+            let label = UILabel()
+            label.text = "Барахолка"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.setStyle(style: .init(font: .ceraPro(style: .normal, size: 28),
+                                        textColor: .white,
+                                        textAlignment: .left))
+            return label
+        }()
+        self.titleLabel = title
+        
+        let profileButton: UIButton = {
+            let button = UIButton()
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.setImage(UIImage(systemName: "person.crop.circle"), for: .normal)
+            button.contentVerticalAlignment = .fill
+            button.contentHorizontalAlignment = .fill
+            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            return button
+        }()
+        self.profileButton = profileButton
+        
+        let field: UITextField = {
+            let field = UITextField()
+            field.placeholder = "Поиск в Москва"
+            field.translatesAutoresizingMaskIntoConstraints = false
+            field.backgroundColor = .grey1
+            field.font = UIFont.ceraPro(style: .normal, size: 18)
+            field.textColor = .gray2
+            field.layer.cornerRadius = 8
+            field.setIcon(UIImage(systemName: "magnifyingglass"))
+            return field
+        }()
+        
+        self.searchField = field
+        
+        
+        profileButton.addTarget(self, action: #selector(showProfileView), for: .touchUpInside)
+        
+        
+        
+        
+        containerView.addSubview(self.titleLabel)
+        containerView.addSubview(self.profileButton)
+        containerView.addSubview(self.searchField)
+        self.header = containerView
+        
+        
+        
+        
+    }
+    
+    func createCapsuleButton(text: String) -> UIButton {
+        let button = UIButton()
+        button.layer.cornerRadius = 24
+        button.titleLabel?.font = UIFont.ceraPro(style: .normal, size: 15)
+        button.setTitle(text, for: .normal)
+        button.backgroundColor = .grey1
+        return button
+    }
+    
+    private func createSearchController() -> UISearchController {
+        let searchController = UISearchController()
+        searchController.delegate = self
+        searchController.searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchController.searchBar.compatibleSearchTextField.backgroundColor = UIColor.black
+        return searchController
+        
+    }
+    
+    @objc func showProfileView() {
+        
     }
     
     private func setup() {
@@ -69,20 +157,53 @@ class MainFeedViewController: UIViewController {
     }
     
     private func setupHierarchy() {
+        view.addSubview(header)
         view.addSubview(mainCollectionView)
         view.addSubview(plusButton)
     }
     
     private func setupConstrains() {
-        mainCollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
         
-        plusButton.snp.makeConstraints { make in
-            make.height.width.equalTo(58)
-            make.right.equalTo(view.safeAreaLayoutGuide.snp.right).inset(17)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(17)
-        }
+        NSLayoutConstraint.activate([
+            titleLabel.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: header.topAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            profileButton.rightAnchor.constraint(equalTo: header.rightAnchor, constant: -30),
+            profileButton.heightAnchor.constraint(equalToConstant: 40),
+            profileButton.widthAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        NSLayoutConstraint.activate([
+            searchField.bottomAnchor.constraint(equalTo: header.bottomAnchor, constant: -16),
+            searchField.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 10),
+            searchField.rightAnchor.constraint(equalTo: header.rightAnchor, constant: -10),
+            searchField.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        
+        
+        NSLayoutConstraint.activate([
+            header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            header.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            header.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            header.heightAnchor.constraint(equalToConstant: 120)
+        ])
+        
+        NSLayoutConstraint.activate([
+            mainCollectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            mainCollectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            mainCollectionView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            plusButton.heightAnchor.constraint(equalToConstant: 58),
+            plusButton.widthAnchor.constraint(equalToConstant: 58),
+            plusButton.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -17),
+            plusButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -17)
+        ])
     }
 }
 
@@ -108,5 +229,45 @@ extension MainFeedViewController: UICollectionViewDelegate, UICollectionViewData
 extension MainFeedViewController: MainFeedCollectionCellDelegate {
     func chatToSellerButtonTapped(cell: MainFeedCollectionCell) {
         present(OpenedProductCardViewController(), animated: true, completion: nil)
+    }
+}
+
+extension MainFeedViewController: UISearchControllerDelegate {
+    
+}
+
+extension UISearchBar {
+    
+    // Due to searchTextField property who available iOS 13 only, extend this property for iOS 13 previous version compatibility
+    var compatibleSearchTextField: UITextField {
+        guard #available(iOS 13.0, *) else { return legacySearchField }
+        return self.searchTextField
+    }
+    
+    private var legacySearchField: UITextField {
+        if let textField = self.subviews.first?.subviews.last as? UITextField {
+            // Xcode 11 previous environment
+            return textField
+        } else if let textField = self.value(forKey: "searchField") as? UITextField {
+            // Xcode 11 run in iOS 13 previous devices
+            return textField
+        } else {
+            // exception condition or error handler in here
+            return UITextField()
+        }
+    }
+}
+
+extension UITextField {
+    func setIcon(_ image: UIImage?) {
+        let iconView = UIImageView(frame:
+                                    CGRect(x: 10, y: 5, width: 20, height: 20))
+        iconView.image = image
+        iconView.tintColor = .gray2
+        let iconContainerView: UIView = UIView(frame:
+                                                CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
     }
 }
