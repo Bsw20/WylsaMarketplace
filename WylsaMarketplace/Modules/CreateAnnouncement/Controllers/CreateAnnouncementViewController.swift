@@ -205,6 +205,12 @@ extension CreateAnnouncementViewController: PhotosCollectionFooterDelegate {
 }
 
 extension CreateAnnouncementViewController: PhotosCollectionHeaderDelegate {
+    func textFieldShouldReturn(view: PhotosCollectionHeader) {
+        if let footer  = mainCollection.visibleSupplementaryViews(ofKind: UICollectionView.elementKindSectionFooter).first as? PhotosCollectionFooter {
+            footer.descriptionTextField.becomeFirstResponder()
+            }
+    }
+    
     func productKindViewTapped(view: PhotosCollectionHeader) {
         let controller = SelectProductKindViewController()
         controller.customDelegate = self
@@ -220,6 +226,7 @@ extension CreateAnnouncementViewController: SelectProductKindViewControllerDeleg
     func kindSelected(controller: SelectProductKindViewController, kind: ProductKind) {
         viewModel.productKind = kind
         mainCollection.reloadData()
+
     }
 }
 

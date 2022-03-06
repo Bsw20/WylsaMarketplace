@@ -33,7 +33,7 @@ final class PhotosCollectionFooter: UICollectionReusableView {
         return label
     }()
     
-    private let descriptionTextField: WYTextField = {
+    public let descriptionTextField: WYTextField = {
         let view = WYTextField(model: .init(placeholder: "Опишите товар"))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

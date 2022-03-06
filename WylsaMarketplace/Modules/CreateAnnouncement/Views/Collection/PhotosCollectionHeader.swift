@@ -15,6 +15,7 @@ struct PhotosCollectionHeaderViewModel {
 protocol PhotosCollectionHeaderDelegate: NSObjectProtocol {
     func backButtonTapped(view: PhotosCollectionHeader)
     func productKindViewTapped(view: PhotosCollectionHeader)
+    func textFieldShouldReturn(view: PhotosCollectionHeader)
 }
 
 final class PhotosCollectionHeader: UICollectionReusableView {
@@ -25,7 +26,7 @@ final class PhotosCollectionHeader: UICollectionReusableView {
     //MARK: - Controls
     
     private var containerView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = .bg1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -36,7 +37,7 @@ final class PhotosCollectionHeader: UICollectionReusableView {
         return view
     }()
     
-
+    
     
     private var productKindLabel: UILabel = {
         let label = UILabel.newAutoLayout()
@@ -45,12 +46,12 @@ final class PhotosCollectionHeader: UICollectionReusableView {
                                     textAlignment: .left,
                                     numberOfLines: 1,
                                     text: "Категория товара"
-                                    ))
+        ))
         return label
     }()
     
     private let productKindView: ProductKindView = {
-       let view = ProductKindView()
+        let view = ProductKindView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -62,7 +63,7 @@ final class PhotosCollectionHeader: UICollectionReusableView {
                                     textAlignment: .left,
                                     numberOfLines: 1,
                                     text: "Название объявления"
-                                    ))
+        ))
         return label
     }()
     
@@ -79,7 +80,7 @@ final class PhotosCollectionHeader: UICollectionReusableView {
                                     textAlignment: .left,
                                     numberOfLines: 1,
                                     text: "Фотографии товара"
-                                    ))
+        ))
         return label
     }()
     
@@ -124,6 +125,7 @@ final class PhotosCollectionHeader: UICollectionReusableView {
     
     private func setup() {
         backgroundColor = .bg1
+        announcementTextField.delegate = self
         navigationView.customDelegate = self
         productKindView.customDelegate = self
     }
@@ -140,7 +142,7 @@ final class PhotosCollectionHeader: UICollectionReusableView {
             make.right.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(8)
             make.top.equalToSuperview().offset(20)
-
+            
         }
     }
     
@@ -157,5 +159,13 @@ extension PhotosCollectionHeader: AnouncementNavigationViewDelegate {
 extension PhotosCollectionHeader: ProductKindViewDelegate {
     func viewTapped(view: ProductKindView) {
         customDelegate?.productKindViewTapped(view: self)
+    }
+}
+
+extension PhotosCollectionHeader: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        customDelegate?.textFieldShouldReturn(view: self)
+        return true
     }
 }
