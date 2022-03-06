@@ -22,6 +22,7 @@ class ProfileSettingsViewController: UIViewController {
     
     public var labels = ["1 км", "2 км", "5 км", "10 км"]
     public var isActive = [false, true, false, false]
+    private var lastActive = 1
     
     private var stackView = UIStackView()
     private var stackView2 = UIStackView()
@@ -112,7 +113,7 @@ class ProfileSettingsViewController: UIViewController {
         let textLabel: UILabel = {
             let label = UILabel()
             label.text = text
-            label.font = UIFont(name: "CeraPro-Medium", size: 13)
+            label.font = UIFont.ceraPro(style: .normal, size: 13)
             label.textColor = UIColor(red: 0.514, green: 0.514, blue: 0.514, alpha: 1)
             label.textAlignment = .left
             return label
@@ -128,7 +129,7 @@ class ProfileSettingsViewController: UIViewController {
             configuration.baseForegroundColor = .white
             configuration.baseBackgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.118, alpha: 1)
             var container = AttributeContainer()
-            container.font = UIFont(name: "CeraPro-Medium", size: 15)
+            container.font = UIFont.ceraPro(style: .normal, size: 15)
             configuration.attributedTitle = AttributedString(field, attributes: container)
             //configuration.title = text
             let button = UIButton(configuration: configuration)
@@ -171,7 +172,7 @@ class ProfileSettingsViewController: UIViewController {
             configuration.baseForegroundColor = .white
             configuration.baseBackgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.118, alpha: 1)
             var container = AttributeContainer()
-            container.font = UIFont(name: "CeraPro-Medium", size: 15)
+            container.font = UIFont.ceraPro(style: .normal, size: 15)
             configuration.attributedTitle = AttributedString(text, attributes: container)
             //configuration.title = text
             let button = UIButton(configuration: configuration)
@@ -191,8 +192,11 @@ class ProfileSettingsViewController: UIViewController {
 
 extension ProfileSettingsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        isActive[indexPath.row].toggle()
-        print(indexPath.row)
+        isActive[lastActive].toggle()
+        let index = indexPath.row
+        lastActive = index
+        isActive[index].toggle()
+        print(index)
         collectionView.reloadData()
     }
 }

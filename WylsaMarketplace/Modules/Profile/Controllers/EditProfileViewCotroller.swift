@@ -60,7 +60,7 @@ class EditProfileViewController: UIViewController {
         let textLabel: UILabel = {
             let label = UILabel()
             label.text = text
-            label.font = UIFont(name: "CeraPro-Medium", size: 13)
+            label.font = UIFont.ceraPro(style: .normal, size: 13)
             label.textColor = UIColor(red: 0.514, green: 0.514, blue: 0.514, alpha: 1)
             label.textAlignment = .left
             return label
@@ -69,7 +69,7 @@ class EditProfileViewController: UIViewController {
         let entityField: UITextField = {
             let textField = UITextField()
             textField.layer.cornerRadius = 8
-            textField.font = UIFont(name: "CeraPro-Medium", size: 15)
+            textField.font = UIFont.ceraPro(style: .normal, size: 15)
             textField.textColor = UIColor(red: 0.514, green: 0.514, blue: 0.514, alpha: 1)
             textField.text = field
             textField.layer.sublayerTransform = CATransform3DMakeTranslation(8, 0, 0)

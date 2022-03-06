@@ -68,7 +68,7 @@ class ProfileViewController: UIViewController {
         let profileLabel: UILabel = {
             let label = UILabel()
             label.text = name
-            label.font = UIFont(name: "CeraPro-Medium", size: 22)
+            label.font = UIFont.ceraPro(style: .normal, size: 22)
             label.textColor = .white
             label.textAlignment = .center
             return label
@@ -94,7 +94,7 @@ class ProfileViewController: UIViewController {
             deleteLabel.text = "Все данные будут стёрты"
             deleteLabel.textColor = UIColor(red: 0.514, green: 0.514, blue: 0.514, alpha: 1)
             deleteLabel.textAlignment = .left
-            deleteLabel.font = UIFont(name: "CeraPro-Medium", size: 11)
+            deleteLabel.font = UIFont.ceraPro(style: .normal, size: 11)
             return deleteLabel
         }()
         self.deleteLabel = deleteLabel
@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController {
             var configuration = UIButton.Configuration.bordered()
             configuration.baseForegroundColor = .white
             var container = AttributeContainer()
-            container.font = UIFont(name: "CeraPro-Medium", size: 15)
+            container.font = UIFont.ceraPro(style: .normal, size: 15)
             configuration.attributedTitle = AttributedString("Выйти", attributes: container)
             //configuration.title = text
             let button = UIButton(configuration: configuration)
@@ -248,7 +248,7 @@ class ProfileViewController: UIViewController {
             configuration.baseForegroundColor = colorStyle
             configuration.contentInsets.leading = 8
             var container = AttributeContainer()
-            container.font = UIFont(name: "CeraPro-Medium", size: 15)
+            container.font = UIFont.ceraPro(style: .normal, size: 15)
             configuration.attributedTitle = AttributedString(text, attributes: container)
             //configuration.title = text
             let button = UIButton(configuration: configuration)

@@ -41,7 +41,7 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     func config(text: String, isActive: Bool) {
         label.text = text
         if isActive {
-            label.layer.backgroundColor = UIColor.green.cgColor
+            label.layer.backgroundColor = UIColor.accentGreen.cgColor
         } else {
             label.layer.backgroundColor = UIColor.grey1.cgColor
         }
