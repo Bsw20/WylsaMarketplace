@@ -14,6 +14,8 @@ class MainFeedViewController: UIViewController {
     var titleLabel = UILabel()
     var profileButton = UIButton()
     var searchField = UITextField()
+    var scrollView = UIScrollView()
+    var stackView = UIStackView()
     
     private lazy var plusButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -117,14 +119,44 @@ class MainFeedViewController: UIViewController {
         
         
         
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let labels = ["iPhone", "iPad", "MacBook", "Аксессуары"]
+        
+        let buttons = (labels).map {createCapsuleButton(text: $0) }
+        var sum: CGFloat = 0
+        for button in buttons {
+            stackView.addArrangedSubview(button)
+            sum += button.frame.width
+        }
+        
+        
+        
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 0
+        self.stackView = stackView
+        
+        
+        let scrollView = UIScrollView()
+        scrollView.contentSize = CGSize(width: sum, height: 30)
+        
+        
+        self.scrollView = scrollView
+        containerView.addSubview(self.scrollView)
+        
+        self.scrollView.addSubview(self.stackView)
+        
+        
         containerView.addSubview(self.titleLabel)
         containerView.addSubview(self.profileButton)
         containerView.addSubview(self.searchField)
+        
+        
+        
+        
         self.header = containerView
-        
-        
-        
-        
     }
     
     func createCapsuleButton(text: String) -> UIButton {
@@ -146,7 +178,7 @@ class MainFeedViewController: UIViewController {
     }
     
     @objc func showProfileView() {
-        
+        self.navigationController?.pushViewController(ProfileViewController(), animated: true)
     }
     
     private func setup() {
@@ -176,10 +208,17 @@ class MainFeedViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            searchField.bottomAnchor.constraint(equalTo: header.bottomAnchor, constant: -16),
+            searchField.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 16),
             searchField.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 10),
             searchField.rightAnchor.constraint(equalTo: header.rightAnchor, constant: -10),
             searchField.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        NSLayoutConstraint.activate([
+            scrollView.leftAnchor.constraint(equalTo: header.leftAnchor, constant: 0),
+            scrollView.rightAnchor.constraint(equalTo: header.rightAnchor, constant: 0),
+            scrollView.bottomAnchor.constraint(equalTo: header.bottomAnchor),
+            scrollView.heightAnchor.constraint(equalToConstant: 24)
         ])
         
         
@@ -188,7 +227,7 @@ class MainFeedViewController: UIViewController {
             header.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             header.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             header.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            header.heightAnchor.constraint(equalToConstant: 120)
+            header.heightAnchor.constraint(equalToConstant: 150)
         ])
         
         NSLayoutConstraint.activate([
