@@ -31,10 +31,11 @@ class ProfileSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = UIColor.cyan
+        collectionView.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ButtonCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -60,7 +61,7 @@ class ProfileSettingsViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 16),
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
             collectionView.heightAnchor.constraint(equalToConstant: 24)
