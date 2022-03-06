@@ -8,29 +8,27 @@
 import UIKit
 
 class ButtonCollectionViewCell: UICollectionViewCell {
-    private let button: UIButton = {
-        if #available(iOS 15.0, *) {
-            var configuration = UIButton.Configuration.bordered()
-            configuration.cornerStyle = .capsule
-            configuration.baseForegroundColor = .white
-            configuration.baseBackgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.118, alpha: 1)
-            let button = UIButton(configuration: configuration)
-            button.contentHorizontalAlignment = .left
-            return button
-        } else {
-            return UIButton()
-        }
+    private let label: UILabel = {
+        let label = UILabel()
+        label.layer.backgroundColor = UIColor.grey1.cgColor
+        label.layer.cornerRadius = 12
+        label.layer.masksToBounds = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "1 км"
+        label.textAlignment = .center
+        label.textColor = .white
+        return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        contentView.addSubview(button)
+        contentView.addSubview(label)
         
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: contentView.topAnchor),
-            button.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            button.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            label.topAnchor.constraint(equalTo: contentView.topAnchor),
+            label.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            label.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         
@@ -41,11 +39,14 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     }
     
     func config(text: String, isActive: Bool) {
-        button.setTitle(text, for: .normal)
+        label.text = text
         if isActive {
-            button.backgroundColor = .green
+            label.layer.backgroundColor = UIColor.green.cgColor
+        } else {
+            label.layer.backgroundColor = UIColor.grey1.cgColor
         }
     }
     
     
 }
+

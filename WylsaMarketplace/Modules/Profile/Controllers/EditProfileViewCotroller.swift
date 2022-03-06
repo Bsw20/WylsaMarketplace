@@ -14,8 +14,8 @@ class EditProfileViewController: UIViewController {
     
     private var nameField: UITextField!
     
-    private var navigationView: AnouncementNavigationView = {
-        let view = AnouncementNavigationView(buttonType: .close, title: "Настройка профиля")
+    private var navigationView: DoneNavigationView = {
+        let view = DoneNavigationView(title: "Настройка профиля")
 //        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -30,6 +30,13 @@ class EditProfileViewController: UIViewController {
     
     func setupView() {
         self.view.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
+        
+        self.view.addSubview(navigationView)
+        navigationView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().inset(16)
+        }
         
         let stackView = createEntityStackView(text: "Имя профиля", field: field)
         
@@ -93,8 +100,8 @@ class EditProfileViewController: UIViewController {
 
 }
 
-extension EditProfileViewController: AnouncementNavigationViewDelegate {
-    func backButtonTapped(view: AnouncementNavigationView) {
-        self.dismiss(animated: true, completion: nil)
+extension EditProfileViewController: DoneNavigationViewDelegate {    
+    func doneButtonTapped(view: DoneNavigationView) {
+        navigationController?.popViewController(animated: true)
     }
 }

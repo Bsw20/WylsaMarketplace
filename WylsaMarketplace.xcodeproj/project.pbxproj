@@ -45,6 +45,9 @@
 		30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E827B95ED1004DAD7C /* PhotoCollectionViewCell.swift */; };
 		595F0A4EFE53670E7AF21C46 /* Pods_WylsaMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */; };
 		AFA0D81B27D4DC58007E6B59 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */; };
+		AFA0D81D27D4F47B007E6B59 /* DoneNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */; };
+		AFA0D81F27D4F7B5007E6B59 /* CityChangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */; };
+		AFA0D82127D4F864007E6B59 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D82027D4F864007E6B59 /* City.swift */; };
 		AFBDA59127D44584001A0048 /* ProfileViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59027D44584001A0048 /* ProfileViewCotroller.swift */; };
 		AFBDA59427D445CB001A0048 /* EditProfileViewCotroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59327D445CB001A0048 /* EditProfileViewCotroller.swift */; };
 		AFBDA59627D44DA8001A0048 /* ProfileNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */; };
@@ -94,6 +97,9 @@
 		881CB724934ABF0C5CB54356 /* Pods-WylsaMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.debug.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WylsaMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneNavigationView.swift; sourceTree = "<group>"; };
+		AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChangingViewController.swift; sourceTree = "<group>"; };
+		AFA0D82027D4F864007E6B59 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		AFBDA59027D44584001A0048 /* ProfileViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCotroller.swift; sourceTree = "<group>"; };
 		AFBDA59327D445CB001A0048 /* EditProfileViewCotroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewCotroller.swift; sourceTree = "<group>"; };
 		AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigationView.swift; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				304FF37927D201E100A2A409 /* ProductKind.swift */,
+				AFA0D82027D4F864007E6B59 /* City.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -291,6 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */,
+				AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */,
+				AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,7 +310,6 @@
 				AFA0D81927D4DBED007E6B59 /* Views */,
 				AFBDA59227D445B5001A0048 /* Controllers */,
 				AFBDA59027D44584001A0048 /* ProfileViewCotroller.swift */,
-				AFBDA59527D44DA8001A0048 /* ProfileNavigationView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 			children = (
 				AFBDA59327D445CB001A0048 /* EditProfileViewCotroller.swift */,
 				AFBDA59727D4546A001A0048 /* ProfileSettingsViewController.swift */,
+				AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -465,7 +474,10 @@
 				AFBDA59827D4546A001A0048 /* ProfileSettingsViewController.swift in Sources */,
 				AFBDA59427D445CB001A0048 /* EditProfileViewCotroller.swift in Sources */,
 				305E278E27CA89C9000E0680 /* SetCostViewController.swift in Sources */,
+				AFA0D82127D4F864007E6B59 /* City.swift in Sources */,
+				AFA0D81D27D4F47B007E6B59 /* DoneNavigationView.swift in Sources */,
 				304FF36C27D0F06F00A2A409 /* ViewController + Extension.swift in Sources */,
+				AFA0D81F27D4F7B5007E6B59 /* CityChangingViewController.swift in Sources */,
 				301CF85F27C53E4500982C6A /* AnouncementNavigationView.swift in Sources */,
 				301CF86127C55EC200982C6A /* ProductKindView.swift in Sources */,
 				301CF85D27C53D5300982C6A /* CreateAnnouncementViewController.swift in Sources */,

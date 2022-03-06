@@ -18,18 +18,36 @@ class ProfileSettingsViewController: UIViewController {
         case light = "Светлая"
     }
     
+    public var theme = Theme.dark
+    
     public var labels = ["1 км", "2 км", "5 км", "10 км"]
     public var isActive = [false, true, false, false]
     
     private var stackView = UIStackView()
     private var stackView2 = UIStackView()
+    private var stackView3 = UIStackView()
     
-    public var theme = Theme.dark
+    private var navigationView: DoneNavigationView = {
+        let view = DoneNavigationView(title: "Настройка аккаунта")
+//        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
-    private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    private var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationView.customDelegate = self
+        
+        self.view.addSubview(navigationView)
+        navigationView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().inset(16)
+        }
+        
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: (self.view.frame.width), height: 36), collectionViewLayout: UICollectionViewFlowLayout.init())
         
         collectionView.backgroundColor = UIColor(red: 0.142, green: 0.142, blue: 0.142, alpha: 1)
         
@@ -38,8 +56,10 @@ class ProfileSettingsViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ButtonCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
+        
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.scrollDirection = .horizontal
+            flowLayout.itemSize = CGSize(width: 78, height: 36)
         }
         
 
@@ -61,30 +81,31 @@ class ProfileSettingsViewController: UIViewController {
         
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16),
+            collectionView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 36),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            collectionView.heightAnchor.constraint(equalToConstant: 24)
+            collectionView.heightAnchor.constraint(equalToConstant: 36)
         ])
         
-        let (stackView2, entity2) = createEntityStackView(text: "Тема оформления", field: city)
+        let (stackView3, entity2) = createEntityStackView(text: "Тема оформления", field: theme.rawValue)
         
-        /*
-        stackView2.translatesAutoresizingMaskIntoConstraints = false
-        self.stackView2 = stackView2
-        self.view.addSubview(self.stackView2)
+        
+        stackView3.translatesAutoresizingMaskIntoConstraints = false
+        self.stackView3 = stackView3
+        self.view.addSubview(self.stackView3)
         
         NSLayoutConstraint.activate([
-            self.stackView2.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 16),
-            self.stackView2.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            self.stackView2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            self.stackView2.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            self.stackView3.topAnchor.constraint(equalTo: self.collectionView.bottomAnchor, constant: 16),
+            self.stackView3.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            self.stackView3.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
         ])
-        */
+        
         
         
         self.cityField = entity1
         self.themeField = entity2
+        
+        cityField.customDelegate = self
     }
     
     func createTextLabel(text: String) -> UILabel {
@@ -169,7 +190,11 @@ class ProfileSettingsViewController: UIViewController {
 
 
 extension ProfileSettingsViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        isActive[indexPath.row].toggle()
+        print(indexPath.row)
+        collectionView.reloadData()
+    }
 }
 
 extension ProfileSettingsViewController: UICollectionViewDataSource {
@@ -181,6 +206,32 @@ extension ProfileSettingsViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ButtonCollectionViewCell
         cell.config(text: labels[indexPath.row], isActive: isActive[indexPath.row])
         return cell
+    }
+    
+    
+}
+
+extension ProfileSettingsViewController: DoneNavigationViewDelegate {
+    func doneButtonTapped(view: DoneNavigationView) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
+}
+
+extension ProfileSettingsViewController: ProductKindViewDelegate {
+    func viewTapped(view: ProductKindView) {
+        let controller = CityChangingViewController()
+        controller.customDelegate = self
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+}
+
+extension ProfileSettingsViewController: CityChangingViewControllerDelegate {
+    func citySelected(controller: CityChangingViewController, kind: City) {
+        cityField.configure(viewModel: .init(productKind: kind.rawValue))
     }
     
     

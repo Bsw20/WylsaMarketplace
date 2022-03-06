@@ -21,12 +21,18 @@ class ProfileViewController: UIViewController {
     private var deleteLabel: UILabel!
     private var exitButton: UIButton!
     
+    private let imagePicker = UIImagePickerController()
+    
     private var navigationView: ProfileNavigationView = {
         let view = ProfileNavigationView(buttonType: .close, title: "Профиль")
 //        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +55,8 @@ class ProfileViewController: UIViewController {
             profileImageView.layer.borderColor = UIColor.black.cgColor
             profileImageView.layer.cornerRadius = 75
             profileImageView.clipsToBounds = true
-            profileImageView.backgroundColor = .red
+            profileImageView.image = UIImage(named: "avatar")
+            //profileImageView.backgroundColor = .red
             return profileImageView
         }()
         
@@ -136,10 +143,12 @@ class ProfileViewController: UIViewController {
     @objc func imageTap() {
         let alert = UIAlertController()
         alert.addAction(UIAlertAction(title: "Изменить фотографию", style: .default, handler: { (_) in
+            self.imagePickerBtnAction()
             print("User click Change button")
         }))
 
         alert.addAction(UIAlertAction(title: "Удалить фотографию", style: .destructive, handler: { (_) in
+            self.profileImageView.image = UIImage(named: "avatar")
             print("User click Delete button")
         }))
         
@@ -260,7 +269,7 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: ProfileNavigationViewDelegate {
     func backButtonTapped(view: ProfileNavigationView) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     func settingsButtonTapped(view: ProfileNavigationView) {
@@ -268,4 +277,76 @@ extension ProfileViewController: ProfileNavigationViewDelegate {
     }
     
     
+}
+
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerBtnAction() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Камера",
+                                      style: .default,
+                                      handler: { _ in
+                                        self.openCamera()
+                                      }))
+
+        alert.addAction(UIAlertAction(title: "Галерея",
+                                      style: .default,
+                                      handler: { _ in
+                                        self.openGallery()
+                                      }))
+
+        alert.addAction(UIAlertAction(title: "Отмена",
+                                      style: .cancel,
+                                      handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Ошибка",
+                                          message: "Камера недоступна",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ок",
+                                          style: .default,
+                                          handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func openGallery() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "Ошибка",
+                                          message: "Галерея недоступна",
+                                          preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ок",
+                                          style: .default,
+                                          handler: nil))
+            self.present(alert, animated: false, completion: nil)
+        }
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        var resultImage: UIImage? = nil
+        if let image = info[.originalImage] as? UIImage {
+            resultImage = image
+        } else if let image = info[.editedImage] as? UIImage {
+            resultImage = image
+        }
+        if let image = resultImage {
+            profileImageView.image = image
+        }
+       
+        picker.dismiss(animated: true, completion: nil)
+    }
 }
