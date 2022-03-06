@@ -44,6 +44,7 @@
 		30D2D6E727B85331004DAD7C /* HSpinnerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E627B85331004DAD7C /* HSpinnerButton.swift */; };
 		30D2D6E927B95ED2004DAD7C /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D2D6E827B95ED1004DAD7C /* PhotoCollectionViewCell.swift */; };
 		595F0A4EFE53670E7AF21C46 /* Pods_WylsaMarketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */; };
+		AF42A9C727D5249E00D40FC9 /* TagsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42A9C627D5249E00D40FC9 /* TagsCollectionViewController.swift */; };
 		AFA0D81B27D4DC58007E6B59 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */; };
 		AFA0D81D27D4F47B007E6B59 /* DoneNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */; };
 		AFA0D81F27D4F7B5007E6B59 /* CityChangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */; };
@@ -96,6 +97,7 @@
 		715A11E0F0E50D2346D103A4 /* Pods-WylsaMarketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.release.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.release.xcconfig"; sourceTree = "<group>"; };
 		881CB724934ABF0C5CB54356 /* Pods-WylsaMarketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WylsaMarketplace.debug.xcconfig"; path = "Target Support Files/Pods-WylsaMarketplace/Pods-WylsaMarketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		A3811F1B32FE16488DDE8D5E /* Pods_WylsaMarketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WylsaMarketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF42A9C627D5249E00D40FC9 /* TagsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewController.swift; sourceTree = "<group>"; };
 		AFA0D81A27D4DC58007E6B59 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		AFA0D81C27D4F47B007E6B59 /* DoneNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneNavigationView.swift; sourceTree = "<group>"; };
 		AFA0D81E27D4F7B5007E6B59 /* CityChangingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityChangingViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			children = (
 				30D2D6D727B83E2C004DAD7C /* Views */,
 				30D2D6D527B83C85004DAD7C /* MainFeedViewController.swift */,
+				AF42A9C627D5249E00D40FC9 /* TagsCollectionViewController.swift */,
 			);
 			path = MainFeed;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				304FF37A27D201E100A2A409 /* ProductKind.swift in Sources */,
 				305E278C27CA79C9000E0680 /* WYTextField.swift in Sources */,
 				304FF37C27D2038F00A2A409 /* SelectProductKindCell.swift in Sources */,
+				AF42A9C727D5249E00D40FC9 /* TagsCollectionViewController.swift in Sources */,
 				30D2D6DE27B843D0004DAD7C /* UILabel + Extension.swift in Sources */,
 				304FF37727D1513B00A2A409 /* SelectProductKindViewController.swift in Sources */,
 				30D2D6D627B83C85004DAD7C /* MainFeedViewController.swift in Sources */,
